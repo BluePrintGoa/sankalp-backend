@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sankalp-backend"
+version = "0.1.0"
+description = "Medical patient record management API"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "uvicorn[standard]>=0.30,<1.0",
+  "SQLAlchemy[asyncio]>=2.0,<3.0",
+  "aiosqlite>=0.20,<1.0",
+  "asyncpg>=0.29,<1.0",
+  "pydantic-settings>=2.5,<3.0",
+  "passlib[argon2]>=1.7.4,<2.0",
+  "python-jose[cryptography]>=3.3,<4.0",
+  "python-multipart>=0.0.9,<1.0",
+  "qrcode>=7.4,<9.0",
+  "Pillow>=10.0",
+  "alembic>=1.13,<2.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
